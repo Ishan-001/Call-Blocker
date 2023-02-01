@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Call Blocker</string>
+    <string name="unblock">Unblock</string>
+    <string name="contact_unblocked">Contact Unblocked</string>
+    <string name="blocked_contacts">Blocked Contacts</string>
+    <string name="select_from_contacts">Select from contacts</string>
+    <string name="add_new_contact">Add new contact</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+    <string name="add">Add</string>
+    <string name="input_error">Both fields are required</string>
+    <string name="error_already_blocked">Number already blocked</string>
+    <string name="success_blocked">Contact blocked successfully</string>
+    <string name="no_contacts_prompt">You have not blocked any contacts yet</string>
+</resources>
