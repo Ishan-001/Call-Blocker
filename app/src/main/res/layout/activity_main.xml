@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3E3E3E"
+    tools:context=".ui.view.MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/blocked_contacts"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/contacts_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginHorizontal="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/no_contacts_prompt"
+        android:textColor="#CDCDCD"
+        android:layout_margin="20dp"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/overlay"
+        android:visibility="gone"
+        android:background="#95000000"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floating_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="36dp"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/ic_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:rippleColor="@color/black" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:visibility="gone"
+        android:id="@+id/floating_button_actions"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/floating_button"
+        app:layout_constraintEnd_toStartOf="@id/floating_button">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_from_contacts"
+            android:id="@+id/select_contact_button"
+            android:textAllCaps="false"
+            android:fontFamily="@font/roboto_medium"
+            android:background="@drawable/button_background"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_new_contact"
+            android:id="@+id/new_contact_button"
+            android:layout_marginTop="8dp"
+            android:textAllCaps="false"
+            android:fontFamily="@font/roboto_medium"
+            android:background="@drawable/button_background"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/add_contact_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/view_background"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/name"
+            android:textColor="#BCBCBC"
+            android:textSize="12sp"/>
+
+        <EditText
+            android:id="@+id/input_name"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#EFEFEF"
+            android:fontFamily="@font/roboto_medium"
+            android:maxLength="14"
+            android:textColor="#EFEFEF"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/phone"
+            android:layout_marginTop="8dp"
+            android:textColor="#BCBCBC"
+            android:textSize="12sp"/>
+
+        <EditText
+            android:id="@+id/input_number"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#EFEFEF"
+            android:fontFamily="@font/roboto_medium"
+            android:maxLength="14"
+            android:textColor="#EFEFEF"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/add_contact_button"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:textAlignment="center"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/white"
+            android:layout_marginTop="8dp"
+            android:padding="8dp"
+            android:text="@string/add"
+            android:textSize="12sp"
+            android:background="@drawable/button_background"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
